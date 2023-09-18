@@ -1,0 +1,17 @@
+{
+  "categorias": [
+    {
+      "id": 1,
+      "titulo": "Carta"
+    }
+  ],
+  "notas": [
+    {
+      "id": 1,
+      "titulo": "Carta",
+      "conteudo": "reetrertert",
+      "tema": "danger",
+      "categoriaId": 1
+    }
+  ]
+}

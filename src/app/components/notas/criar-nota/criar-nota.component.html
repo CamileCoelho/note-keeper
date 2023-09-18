@@ -1,10 +1,10 @@
-<!-- <section class="row justify-content-center">
+<section class="row justify-content-center">
     <div class="col-lg-4 d-grid gap-4">
         <h1>Criar Nota</h1>
 
         <h2 class="fs-4 fw-light">
-            Crie uma categoria para organizar melhor as tarefas do seu
-            dia-a-dia.
+            Crie uma categoria para organizar 
+            melhor as tarefas do seu dia-a-dia.
         </h2>
 
         <form (submit)="criarNota()" class="d-grid gap-3">
@@ -32,16 +32,16 @@
 
             <label for="tema" class="form-label fs-5 fw-semibold">Tema</label>
             <div>
+
+                <div class="form-check form-check-inline">
+                    <input [(ngModel)]="nota.tema" class="form-check-input" type="radio" name="tema" id="temaSuccess"
+                        value="success" />
+                    <label class="form-check-label" for="temaDark">Padrão</label>
+                </div>
                 
                 <div class="form-check form-check-inline">
                     <input [(ngModel)]="nota.tema" class="form-check-input" type="radio" name="tema" id="temaDark"
-                    value="success" />
-                    <label class="form-check-label" for="temaSuccess">Padrão</label>
-                </div>
-
-                <div class="form-check form-check-inline">
-                    <input [(ngModel)]="nota.tema" class="form-check-input" type="radio" name="tema" id="temaDark"
-                        value="success" />
+                    value="dark" />
                     <label class="form-check-label" for="temaDark">Neutro</label>
                 </div>
                 
@@ -66,7 +66,7 @@
             </div>
 
             <div class="col">
-                <div class="card h-100 bg-{{nota.tema}}">
+                <div class="card h-100 border-{{nota.tema}}">
                     <div class="card-body ">
                         <div class="d-flex align-items-center">
                             <h5 class="card-title">{{nota.titulo}}</h5>
@@ -85,68 +85,4 @@
             </div>
         </form>
     </div>
-</section> -->
-
-<section class="row justify-content-center">
-    <div class="col-lg-4 d-grid gap-4">
-        <h1>Criar Nota</h1>
-
-        <h2 class="fs-4 fw-light">
-            Crie uma nota personalizada para ajudar a organizar as tarefas do seu
-            dia-a-dia.
-        </h2>
-
-        <form (submit)="criarNota()" class="d-grid gap-3">
-            <div class="mb-3">
-                <label for="titulo" class="form-label fs-5 fw-semibold">Título</label>
-                <input [(ngModel)]="nota.titulo" type="text" class="form-control" id="titulo" name="titulo" />
-            </div>
-
-            <div class="mb-3">
-                <label for="conteudo" class="form-label fs-5 fw-semibold">Conteúdo</label>
-                <textarea [(ngModel)]="nota.conteudo" name="conteudo" class="form-control" id="conteudo"
-                    rows="3"></textarea>
-            </div>
-
-            <label for="tema" class="form-label fs-5 fw-semibold">Tema</label>
-            <div>
-                <div class="form-check form-check-inline">
-                    <input [(ngModel)]="nota.tema" class="form-check-input" type="radio" name="tema" id="temaDark"
-                        value="dark" />
-                    <label class="form-check-label" for="temaDark">Padrão</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input [(ngModel)]="nota.tema" class="form-check-input" type="radio" name="tema" id="temaInfo"
-                        value="info" />
-                    <label class="form-check-label" for="temaInfo">Informação</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input [(ngModel)]="nota.tema" class="form-check-input" type="radio" name="tema" id="temaWarning"
-                        value="warning" />
-                    <label class="form-check-label" for="temaWarning">Aviso</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input [(ngModel)]="nota.tema" class="form-check-input" type="radio" name="tema" id="temaDanger"
-                        value="danger" />
-                    <label class="form-check-label" for="temaDanger">Urgente</label>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100 border-{{ nota.tema }}">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center">
-                            <h5 class="card-title">{{ nota.titulo }}</h5>
-                            <span class="ms-auto fw-semibold text-muted">Id: {{ nota.id }}</span>
-                        </div>
-                        <p class="card-text my-4">{{ nota.conteudo }}</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="d-flex gap-2 my-2 justify-content-end">
-                <button type="submit" class="btn btn-primary px-5">SALVAR</button>
-                <button routerLink="/notas/listar" class="btn btn-outline-danger px-4">CANCELAR</button>
-            </div>
-        </form>
-    </div>
-</section>
+</section> 

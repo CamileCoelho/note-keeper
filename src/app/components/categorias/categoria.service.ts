@@ -8,28 +8,27 @@ import { Categoria } from "./categoria";
 })
 
 export class CategoriaService {
-
-    private API_URl = 'http://localhost:3000/categorias/';
+    private API_URL = 'http://localhost:3000/categorias/';
 
     constructor(private http: HttpClient) {}
 
     criar(categoria: Categoria) {
-        return this.http.post<Categoria>(this.API_URl, categoria);
+        return this.http.post<Categoria>(this.API_URL, categoria);
     }
 
     editar(categoria: Categoria) {
-        return this.http.put<Categoria>(this.API_URl + categoria.id, categoria);
+        return this.http.put<Categoria>(this.API_URL + categoria.id, categoria);
     }
 
     excluir(categoria: Categoria) {
-        return this.http.delete<Categoria>(this.API_URl + categoria.id);
+        return this.http.delete<Categoria>(this.API_URL + categoria.id);
     }
 
     selecionarPorId(id: number): Observable<Categoria> {
-        return this.http.get<Categoria>(this.API_URl + id);
+        return this.http.get<Categoria>(this.API_URL + id);
     }
 
     selecionarTodos(): Observable<Categoria[]> {
-        return this.http.get<Categoria[]>(this.API_URl);
+        return this.http.get<Categoria[]>(this.API_URL);
     }
 }

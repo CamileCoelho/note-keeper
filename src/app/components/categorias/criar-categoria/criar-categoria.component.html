@@ -4,7 +4,6 @@
 
         <h2 class="fs-4 fw-light">Crie uma categoria melhorar suas notas.</h2>
 
-
         <form (submit)="criarCategoria()" class="d-grid gap-3">
 
             <div class="mb-3">
@@ -27,7 +26,7 @@
 
             <div class="d-flex gap-2 my-2 justify-content-end">
                 <button type="submit" class="btn btn-primary px-5">SALVAR</button>
-                <button class="btn btn-outline-danger px-4">CANCELAR</button>
+                <button routerLink="/categorias/listar" class="btn btn-outline-danger px-4">CANCELAR</button>
             </div>
         </form>
     </div>
