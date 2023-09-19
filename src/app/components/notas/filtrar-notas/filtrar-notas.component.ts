@@ -11,6 +11,7 @@ import { CategoriaService } from '../../categorias/categoria.service';
   templateUrl: './filtrar-notas.component.html',
   styleUrls: ['./filtrar-notas.component.css']
 })
+
 export class FiltrarNotasComponent implements OnInit {
   notas: Nota[] = [];
   categorias: Categoria[] = [];
