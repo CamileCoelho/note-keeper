@@ -19,23 +19,9 @@ export class ListarNotasComponent implements OnInit {
   ngOnInit(): void {
     this.carregarCategorias();
 
-    this.notaService.selecionarTodos().subscribe((notas) => {
+    this.notaService.selecionarTodosComCategoria().subscribe((notas) => {
       this.notas = notas;
     });
-
-    // this.route.paramMap.subscribe(params => {
-    //   const id = parseInt(params.get('categoriaId') as string);
-      
-    //   this.carregarCategorias();
-
-    //   this.notaService.selecionarPorCategoria(id).subscribe((notas) => {
-    //     this.notas = notas;
-    //   });
-
-    //   this.notaService.selecionarTodos().subscribe((notas) => {
-    //     this.notas = notas;
-    //   });
-    // });
   }
 
   carregarCategorias() {

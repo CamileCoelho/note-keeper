@@ -15,18 +15,15 @@ import { CategoriaService } from '../../../services/categoria.service';
 export class CriarNotaComponent implements OnInit {
   categorias: Categoria[] = [];
   nota: Nota;
+  categoriaSelecionada?: Categoria;
 
   ngOnInit(): void {
-    this.carregarCategorias();
+    this.carregarCategorias();    
   }
 
   constructor(private notaService: NotaService, private router: Router, private toastService: ToastrService, private categoriaService: CategoriaService) {
     this.carregarCategorias();
     this.nota = new Nota( '', '', 'success', 0, 1);
-  }
-
-  get categoriaSelecionada(): any {
-    return this.categorias.find(categoria => categoria.id === this.nota.categoriaId);
   }
 
   mostrarMensagem() {
@@ -38,12 +35,16 @@ export class CriarNotaComponent implements OnInit {
     this.categoriaService.selecionarTodos().subscribe((categorias) => {
       this.categorias = categorias;
 
-      if (this.categorias.length == 0) this.mostrarMensagem();
+      this.onCategoriaSelecionada(categorias[0].id!);
+
+      if (this.categorias.length == 0) 
+        this.mostrarMensagem();
     });
   }
-
-  encontrarCategoriaPorId(id: number): any {
-    return this.categorias.find(categoria => categoria.id === id);
+  
+  onCategoriaSelecionada(categoriaId: number): any {
+    const categoria = this.categorias.find(categoria => categoria.id === categoriaId);
+    this.categoriaSelecionada = categoria;
   }
 
   criarNota() {

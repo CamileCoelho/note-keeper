@@ -35,4 +35,8 @@ export class NotaService {
     selecionarPorCategoria(id: number) {
         return this.http.get<Nota[]>("http://localhost:3000/categorias/" + id + "/notas/?_expand=categoria");
     }
+
+    selecionarTodosComCategoria() {
+        return this.http.get<Nota[]>("http://localhost:3000/notas/?_expand=categoria");
+    }
 }

@@ -22,10 +22,10 @@
 
             <label for="tema" class="form-label fs-5 fw-semibold">Categoria</label>
 
-            <select [(ngModel)]="nota.categoriaId" id="categoriaId" name="categoriaId" class="form-select"
-                aria-label="Categorias">
+            <select [(ngModel)]="nota.categoriaId" (ngModelChange)="onCategoriaSelecionada($event)" name="categoriaId" 
+                class="form-select" aria-label="Categorias">
 
-                <option *ngFor="let categoria of categorias" value={{categoria.id}}>{{categoria.titulo}}</option>
+                <option *ngFor="let categoria of categorias" [ngValue]="categoria.id">{{categoria.titulo}}</option>
 
             </select>
 
@@ -71,8 +71,9 @@
                             <h5 class="card-title">{{nota.titulo}}</h5>
                             <span class="ms-auto fw-semibold text-muted">Id: {{nota.id}}</span>
                         </div>
-                        <p class="card-text my-4">{{nota.conteudo}}</p>
-                        <p class="card-text my-4">{{nota.categoriaId}}</p>
+
+                        <p class="card-text my-4">{{nota.conteudo}}</p>                                    
+                        <p class="card-text my-4">{{categoriaSelecionada?.titulo}}</p>
                     </div>
                 </div>
             </div>
