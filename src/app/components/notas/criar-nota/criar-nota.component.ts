@@ -23,7 +23,10 @@ export class CriarNotaComponent implements OnInit {
   constructor(private notaService: NotaService, private router: Router, private toastService: ToastrService, private categoriaService: CategoriaService) {
     this.carregarCategorias();
     this.nota = new Nota( '', '', 'success', 0, 1);
-    console.log(this.categorias);
+  }
+
+  get categoriaSelecionada(): any {
+    return this.categorias.find(categoria => categoria.id === this.nota.categoriaId);
   }
 
   mostrarMensagem() {
@@ -39,9 +42,12 @@ export class CriarNotaComponent implements OnInit {
     });
   }
 
+  encontrarCategoriaPorId(id: number): any {
+    return this.categorias.find(categoria => categoria.id === id);
+  }
+
   criarNota() {
     this.notaService.criar(this.nota).subscribe((nota) => {
-      console.log(nota);
       this.toastService.success('Nota criada com Sucesso!', 'Sucesso');
       this.router.navigate(['/notas', 'listar']);
     });

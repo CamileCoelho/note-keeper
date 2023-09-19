@@ -15,13 +15,6 @@
   ],
   "notas": [
     {
-      "id": 1,
-      "titulo": "s",
-      "conteudo": "s",
-      "tema": "info",
-      "categoriaId": 1
-    },
-    {
       "id": 2,
       "titulo": "Aprender Angular",
       "conteudo": "Aulas Tiagao",

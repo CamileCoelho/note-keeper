@@ -21,15 +21,14 @@
             </div>
 
             <label for="tema" class="form-label fs-5 fw-semibold">Categoria</label>
-
+            
             <select [(ngModel)]="nota.categoriaId" id="categoriaId" name="categoriaId" class="form-select"
                 aria-label="Categorias">
 
                 <option *ngFor="let categoria of categorias" value={{categoria.id}}>{{categoria.titulo}}</option>
 
             </select>
-
-
+            
             <label for="tema" class="form-label fs-5 fw-semibold">Tema</label>
             <div>
 
@@ -67,14 +66,13 @@
 
             <div class="col">
                 <div class="card h-100 border-{{nota.tema}}">
-                    <div class="card-body ">
+                    <div class="card-body">
                         <div class="d-flex align-items-center">
                             <h5 class="card-title">{{nota.titulo}}</h5>
                             <span class="ms-auto fw-semibold text-muted">Id: {{nota.id}}</span>
                         </div>
                         <p class="card-text my-4">{{nota.conteudo}}</p>
                         <p class="card-text my-4">{{nota.categoriaId}}</p>
-
                     </div>
                 </div>
             </div>
