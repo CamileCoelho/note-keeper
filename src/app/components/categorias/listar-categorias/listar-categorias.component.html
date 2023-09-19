@@ -1,38 +1,19 @@
-<section class="row gap-3">
+<section class="row gap-4 mx-5">
 
     <h1>Minhas Categorias</h1>
 
-    <div>
-        <button routerLink="/categorias/criar" class="btn btn-lg btn-outline-primary mb-4 rounded-4">
-            <i class="bi bi-plus-circle"></i>
-            Criar categoria
-        </button>
+    <div class="row g-1">
+        <div class="col-6 d-flex justify-content-start align-items-center mx-2">
+            <button routerLink="/categorias/criar" class="btn btn-lg btn-outline-primary rounded-4">
+                <i class="bi bi-plus-circle"></i>
+                Criar categoria
+            </button>
+        </div>
     </div>
 
-    <div class="text-center">
-        <div class="d-flex justify-content-center">
-            <div class="table-responsive">
-                <table class="table table-striped table-auto">
-                    <tbody class="table-group-divider">
-                        <tr *ngFor="let categoria of categorias">
-                            <td>{{categoria.id}}</td>
-                            <td>{{categoria.titulo}}</td>
-                            <td class="g-3">
-                                <button routerLink="/categorias/editar/{{categoria.id}}"
-                                    class="btn btn-sm btn-outline-dark mb-4 rounded-4 g-3" data-bs-toggle="tooltip"
-                                    data-bs-placement="top" title="Editar Categoria">
-                                    <i class="bi bi-pencil"></i>
-                                </button>
-                                <button routerLink="/categorias/excluir/{{categoria.id}}"
-                                    class="btn btn-sm btn-outline-dark mb-4 rounded-4 g-3" data-bs-toggle="tooltip"
-                                    data-bs-placement="top" title="Excluir Categoria">
-                                    <i class="bi bi-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <div class="row g-3">
+        <div *ngFor="let categoria of categorias" class="col-sm col-md-6 col-lg-3">
+            <app-categoria [categoria]="categoria"></app-categoria>
         </div>
     </div>
 </section>
