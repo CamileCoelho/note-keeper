@@ -5,5 +5,13 @@
       "titulo": "Carta"
     }
   ],
-  "notas": []
+  "notas": [
+    {
+      "id": 1,
+      "titulo": "s",
+      "conteudo": "s",
+      "tema": "info",
+      "categoriaId": 1
+    }
+  ]
 }
