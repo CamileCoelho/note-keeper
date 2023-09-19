@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CategoriaService } from '../categoria.service';
-import { NotaService } from '../../notas/nota.service';
-import { Categoria } from '../categoria';
+import { CategoriaService } from '../../../services/categoria.service';
+import { NotaService } from '../../../services/nota.service';
+import { Categoria } from '../../../models/categoria';
 
 @Component({
   selector: 'app-listar-categorias',

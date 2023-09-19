@@ -3,7 +3,7 @@
         <h1>Criar Nota</h1>
 
         <h2 class="fs-4 fw-light">
-            Crie uma categoria para organizar 
+            Crie uma categoria para organizar
             melhor as tarefas do seu dia-a-dia.
         </h2>
 
@@ -21,14 +21,14 @@
             </div>
 
             <label for="tema" class="form-label fs-5 fw-semibold">Categoria</label>
-            
+
             <select [(ngModel)]="nota.categoriaId" id="categoriaId" name="categoriaId" class="form-select"
                 aria-label="Categorias">
 
                 <option *ngFor="let categoria of categorias" value={{categoria.id}}>{{categoria.titulo}}</option>
 
             </select>
-            
+
             <label for="tema" class="form-label fs-5 fw-semibold">Tema</label>
             <div>
 
@@ -37,13 +37,13 @@
                         value="success" />
                     <label class="form-check-label" for="temaDark">Padrão</label>
                 </div>
-                
+
                 <div class="form-check form-check-inline">
                     <input [(ngModel)]="nota.tema" class="form-check-input" type="radio" name="tema" id="temaDark"
-                    value="dark" />
+                        value="dark" />
                     <label class="form-check-label" for="temaDark">Neutro</label>
                 </div>
-                
+
                 <div class="form-check form-check-inline">
                     <input [(ngModel)]="nota.tema" class="form-check-input" type="radio" name="tema" id="temaInfo"
                         value="info" />
@@ -83,4 +83,4 @@
             </div>
         </form>
     </div>
-</section> 
+</section>

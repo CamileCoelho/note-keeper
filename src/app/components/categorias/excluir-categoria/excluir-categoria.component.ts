@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { CategoriaService } from '../categoria.service';
+import { CategoriaService } from '../../../services/categoria.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { NotaService } from '../../notas/nota.service';
-import { Categoria } from '../categoria';
+import { NotaService } from '../../../services/nota.service';
+import { Categoria } from '../../../models/categoria';
 
 @Component({
   selector: 'app-excluir-categoria',

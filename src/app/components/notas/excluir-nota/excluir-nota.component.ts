@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { NotaService } from '../nota.service';
-import { Nota } from '../nota';
+import { NotaService } from '../../../services/nota.service';
+import { Nota } from '../../../models/nota';
 
 @Component({
   selector: 'app-excluir-nota',
